@@ -1,0 +1,43 @@
+{
+  "id": "WH-RESOLVED-1",
+  "event_version": "1.0",
+  "create_time": "2026-11-18T10:00:00.000Z",
+  "resource_type": "dispute",
+  "event_type": "CUSTOMER.DISPUTE.RESOLVED",
+  "summary": "A dispute was updated",
+  "resource": {
+    "dispute_id": "PP-D-27803",
+    "create_time": "2026-11-09T08:30:00.000Z",
+    "update_time": "2026-11-09T08:30:00.000Z",
+    "reason": "MERCHANDISE_OR_SERVICE_NOT_RECEIVED",
+    "status": "RESOLVED",
+    "dispute_amount": {
+      "currency_code": "USD",
+      "value": "129.00"
+    },
+    "dispute_life_cycle_stage": "CHARGEBACK",
+    "dispute_channel": "INTERNAL",
+    "seller_response_due_date": "2026-11-20T08:30:00.000Z",
+    "disputed_transactions": [
+      {
+        "seller_transaction_id": "5O190127TN364715T",
+        "invoice_number": "ord_102",
+        "buyer": {
+          "name": "A. Buyer",
+          "email": "alex@example.com"
+        },
+        "seller": {
+          "merchant_id": "MERCHANT-SANDBOX-1",
+          "name": "Demo seller"
+        },
+        "gross_amount": {
+          "currency_code": "USD",
+          "value": "129.00"
+        }
+      }
+    ],
+    "dispute_outcome": {
+      "outcome_code": "RESOLVED_SELLER_FAVOUR"
+    }
+  }
+}

@@ -1,0 +1,52 @@
+{
+  "dispute": {
+    "id": "dp_003",
+    "seller_id": "sel_demo",
+    "processor": "stripe",
+    "processor_dispute_id": "du_test_003",
+    "amount": 4500,
+    "currency": "usd",
+    "reason_raw": "product_unacceptable",
+    "category": "not_as_described",
+    "status": "needs_response",
+    "created_at": "2026-10-05T15:00:00Z",
+    "deadline_at": "2026-10-12T23:59:59Z",
+    "customer_hash": "c_d3c80f19",
+    "order_id": "ord_70",
+    "product_sku": "SKU-LAMP-02",
+    "courier": "CourierX",
+    "evidence": ["ev_8", "ev_9", "ev_10"]
+  },
+  "evidence": [
+    {
+      "id": "ev_8",
+      "dispute_id": "dp_003",
+      "type": "customer_message",
+      "source": "shop_api",
+      "verified": true,
+      "summary": "Customer emailed 2026-09-30 with photo of cracked lamp base asking for a refund; no reply sent",
+      "uri": "files/ev_8.jpg",
+      "captured_at": "2026-09-30T11:20:00Z"
+    },
+    {
+      "id": "ev_9",
+      "dispute_id": "dp_003",
+      "type": "refund_policy",
+      "source": "shop_api",
+      "verified": true,
+      "summary": "Checkout policy: damaged items refunded or replaced if reported within 7 days of delivery",
+      "uri": null,
+      "captured_at": "2026-09-25T10:00:00Z"
+    },
+    {
+      "id": "ev_10",
+      "dispute_id": "dp_003",
+      "type": "delivery_proof",
+      "source": "shipping_api",
+      "verified": true,
+      "summary": "Delivered 2026-09-29 09:40, left at door",
+      "uri": null,
+      "captured_at": "2026-09-29T09:40:00Z"
+    }
+  ]
+}

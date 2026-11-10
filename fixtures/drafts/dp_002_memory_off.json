@@ -1,0 +1,74 @@
+{
+  "dispute_id": "dp_002",
+  "memory_mode": "off",
+  "advice": {
+    "action": "fight",
+    "win_probability": 0.3,
+    "interval": [
+      0.0,
+      0.637
+    ],
+    "n_cases": 0,
+    "basis": "generic",
+    "amount_vs_cost": "Dispute 84.00 USD vs fee 15.00 and effort 5.00",
+    "rationale": [
+      "No history yet; using the shared-pattern rate of 30% for this dispute type.",
+      "Expected recovery exceeds the effort and fee at risk."
+    ]
+  },
+  "checklist": [
+    {
+      "item": "Order receipt",
+      "status": "available",
+      "evidence_id": "ev_7",
+      "required": true
+    },
+    {
+      "item": "Prior undisputed orders with matching email/IP/device",
+      "status": "available",
+      "evidence_id": "ev_6",
+      "required": true
+    },
+    {
+      "item": "IP / device data for this order",
+      "status": "available",
+      "evidence_id": "ev_5",
+      "required": false
+    },
+    {
+      "item": "Delivery proof",
+      "status": "missing",
+      "evidence_id": null,
+      "required": false
+    },
+    {
+      "item": "Customer communication",
+      "status": "missing",
+      "evidence_id": null,
+      "required": false
+    }
+  ],
+  "claims": [
+    {
+      "text": "Device and IP record: Checkout from device d_7a1 and IP 203.0.113.24, same as two earlier undisputed orders.",
+      "evidence_id": "ev_5"
+    },
+    {
+      "text": "Order record: Charge ch_test_61: $84.00, AVS and CVC checks passed.",
+      "evidence_id": "ev_7"
+    },
+    {
+      "text": "Order history: 2 prior undisputed orders (ord_12 on 2026-06-02, ord_37 on 2026-08-11) with same email hash, device and shipping address.",
+      "evidence_id": "ev_6"
+    }
+  ],
+  "rejected_claims": [],
+  "letter_md": "To the dispute review team,\n\nDevice and IP record: Checkout from device d_7a1 and IP 203.0.113.24, same as two earlier undisputed orders. [1] Order record: Charge ch_test_61: $84.00, AVS and CVC checks passed. [2] Order history: 2 prior undisputed orders (ord_12 on 2026-06-02, ord_37 on 2026-08-11) with same email hash, device and shipping address. [3]\n\nSources: [1] ev_5, [2] ev_7, [3] ev_6.",
+  "memory": [],
+  "cost": {
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "recall_calls": 0,
+    "usd": 0.0
+  }
+}

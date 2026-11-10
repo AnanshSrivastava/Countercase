@@ -1,0 +1,190 @@
+{
+  "dispute_id": "dp_001",
+  "memory_mode": "on",
+  "advice": {
+    "action": "fight",
+    "win_probability": 0.59,
+    "interval": [
+      0.413,
+      0.766
+    ],
+    "n_cases": 16,
+    "basis": "seller_history+shared_prior",
+    "amount_vs_cost": "Dispute 129.00 USD vs fee 15.00 and effort 5.00",
+    "rationale": [
+      "Estimated win chance 59% (range 41%-77%) from 16 similar past case(s).",
+      "Expected recovery exceeds the effort and fee at risk."
+    ]
+  },
+  "checklist": [
+    {
+      "item": "Order receipt",
+      "status": "available",
+      "evidence_id": "ev_3",
+      "required": true
+    },
+    {
+      "item": "Delivery proof (tracking, photo, signature)",
+      "status": "available",
+      "evidence_id": "ev_1",
+      "required": true
+    },
+    {
+      "item": "Customer communication",
+      "status": "missing",
+      "evidence_id": null,
+      "required": false
+    },
+    {
+      "item": "Refund / shipping policy shown at checkout",
+      "status": "missing",
+      "evidence_id": null,
+      "required": false
+    }
+  ],
+  "claims": [
+    {
+      "text": "Order record: Order ord_55: 1x Ceramic Mug (SKU-MUG-01), $129.00, shipping address matches billing.",
+      "evidence_id": "ev_3"
+    },
+    {
+      "text": "Delivery record: Delivered 2026-09-28 14:02, signed 'J. Doe', photo attached.",
+      "evidence_id": "ev_1"
+    },
+    {
+      "text": "Shipping record: CourierX tracking CX123456789: shipped 2026-09-24, out for delivery 2026-09-28.",
+      "evidence_id": "ev_2"
+    }
+  ],
+  "rejected_claims": [],
+  "letter_md": "To the dispute review team,\n\nOrder record: Order ord_55: 1x Ceramic Mug (SKU-MUG-01), $129.00, shipping address matches billing. [1] Delivery record: Delivered 2026-09-28 14:02, signed 'J. Doe', photo attached. [2] Shipping record: CourierX tracking CX123456789: shipped 2026-09-24, out for delivery 2026-09-28. [3]\n\nSources: [1] ev_3, [2] ev_1, [3] ev_2.",
+  "memory": [
+    {
+      "id": "262e6225-eb3f-4e1d-9287-d8583ab704dc",
+      "kind": "directive",
+      "text": "Keep letters short and formal",
+      "confidence": 1.0,
+      "n_supporting": 1,
+      "event_date": null,
+      "used": true,
+      "why": "Seller directive applied to every draft",
+      "editable": true
+    },
+    {
+      "id": "734f43c6-7345-4741-aa38-3c98b109478d",
+      "kind": "directive",
+      "text": "Never fight disputes under 20",
+      "confidence": 1.0,
+      "n_supporting": 1,
+      "event_date": null,
+      "used": true,
+      "why": "Seller directive applied to every draft",
+      "editable": true
+    },
+    {
+      "id": "b7ec5958-98e0-4278-9666-9a65f6cb7a8a",
+      "kind": "directive",
+      "text": "Always cite the 7-day return policy",
+      "confidence": 1.0,
+      "n_supporting": 1,
+      "event_date": null,
+      "used": true,
+      "why": "Seller directive applied to every draft",
+      "editable": true
+    },
+    {
+      "id": "mem_ab40da2674",
+      "kind": "case",
+      "text": "Lost a 'not received' dispute for SKU-MUG-01 (129.00 USD) shipped by CourierX | When: 2026-08-20 | Involving: user",
+      "confidence": 1.0,
+      "n_supporting": 1,
+      "event_date": "2026-08-20",
+      "used": true,
+      "why": "Matches this dispute's reason, courier or customer",
+      "editable": true
+    },
+    {
+      "id": "mem_2fda77177b",
+      "kind": "case",
+      "text": "User lost a 'not received' dispute for SKU-MUG-01 (129.00 USD) shipped by CourierY, with evidence submitted: order receipt and tracking | When: Saturday, August 15, 2026 | Involving: user",
+      "confidence": 1.0,
+      "n_supporting": 1,
+      "event_date": "2026-08-15",
+      "used": true,
+      "why": "Matches this dispute's reason, courier or customer",
+      "editable": true
+    },
+    {
+      "id": "mem_1d711e6df3",
+      "kind": "case",
+      "text": "Won a 'not received' dispute for SKU-MUG-01 (129.00 USD) shipped by CourierZ | When: 2026-08-13",
+      "confidence": 1.0,
+      "n_supporting": 1,
+      "event_date": "2026-08-13",
+      "used": true,
+      "why": "Matches this dispute's reason, courier or customer",
+      "editable": true
+    },
+    {
+      "id": "mem_1905693eef",
+      "kind": "case",
+      "text": "Won a 'not received' dispute for SKU-MUG-01 (129.00 USD) shipped by CourierY, with evidence submitted: order receipt, tracking, delivery photo, customer message. | When: 2026-07-25",
+      "confidence": 1.0,
+      "n_supporting": 1,
+      "event_date": "2026-07-25",
+      "used": true,
+      "why": "Matches this dispute's reason, courier or customer",
+      "editable": true
+    },
+    {
+      "id": "mem_5b270e9e77",
+      "kind": "case",
+      "text": "User won a 'not as described' dispute for SKU-MUG-01 (129.00 USD) shipped by CourierX, with evidence submitted: order receipt. | When: 2026-07-17 | Involving: user",
+      "confidence": 1.0,
+      "n_supporting": 1,
+      "event_date": "2026-07-17",
+      "used": true,
+      "why": "Matches this dispute's reason, courier or customer",
+      "editable": true
+    },
+    {
+      "id": "mem_05af14d913",
+      "kind": "customer_history",
+      "text": "Customer c_9f2a71d0 confirmed that the parcel had been left with a neighbour. | When: Thursday, August 20, 2026 | Involving: Customer c_9f2a71d0",
+      "confidence": 0.01,
+      "n_supporting": 1,
+      "event_date": "2026-08-20",
+      "used": true,
+      "why": "Same customer disputed before",
+      "editable": true
+    },
+    {
+      "id": "belief:evidence:not_received",
+      "kind": "belief",
+      "text": "Delivery photo / proof wins 'not received' disputes (62% won with it vs 23% without)",
+      "confidence": 0.99,
+      "n_supporting": 29,
+      "event_date": null,
+      "used": true,
+      "why": "Derived from 29 of your past cases (strong)",
+      "editable": true
+    },
+    {
+      "id": "belief:courier:CourierX",
+      "kind": "belief",
+      "text": "CourierX is involved in 62% of your lost disputes since 2026-08-01 (10 of 16)",
+      "confidence": 0.61,
+      "n_supporting": 16,
+      "event_date": null,
+      "used": true,
+      "why": "Derived from 16 of your past cases (moderate)",
+      "editable": true
+    }
+  ],
+  "cost": {
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "recall_calls": 3,
+    "usd": 0.0
+  }
+}

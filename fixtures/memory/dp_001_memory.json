@@ -1,0 +1,7 @@
+[
+  {"id": "mem_77", "kind": "case", "text": "Won 'not received' (CourierX) with delivery photo, Aug 2026", "confidence": 0.85, "n_supporting": 3, "event_date": "2026-08-14", "used": true, "why": "Same reason and same courier", "editable": true},
+  {"id": "mem_80", "kind": "belief", "text": "Delivery photos win 'not received' disputes", "confidence": 0.85, "n_supporting": 3, "event_date": "2026-09-30", "used": true, "why": "Applies to this reason code", "editable": true},
+  {"id": "mem_91", "kind": "directive", "text": "Always cite the 7-day return policy", "confidence": 1.0, "n_supporting": 1, "event_date": "2026-07-02", "used": true, "why": "Seller directive applied to every draft", "editable": true},
+  {"id": "mem_95", "kind": "customer_history", "text": "Customer c_9f2a71d0 disputed order ord_31 six weeks ago and later confirmed receipt", "confidence": 0.9, "n_supporting": 1, "event_date": "2026-08-20", "used": true, "why": "Same customer hash", "editable": true},
+  {"id": "mem_12", "kind": "case", "text": "Lost 'unauthorized' on SKU-TEE-04, Jun 2026", "confidence": 0.5, "n_supporting": 1, "event_date": "2026-06-11", "used": false, "why": "Different reason code", "editable": true}
+]

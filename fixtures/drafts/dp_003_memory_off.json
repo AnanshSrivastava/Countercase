@@ -1,0 +1,55 @@
+{
+  "dispute_id": "dp_003",
+  "memory_mode": "off",
+  "advice": {
+    "action": "accept",
+    "win_probability": 0.4,
+    "interval": [
+      0.04,
+      0.76
+    ],
+    "n_cases": 0,
+    "basis": "generic",
+    "amount_vs_cost": "Dispute 45.00 USD vs fee 15.00 and effort 5.00",
+    "rationale": [
+      "No history yet; using the shared-pattern rate of 40% for this dispute type.",
+      "The customer's claim appears valid based on the verified evidence; fighting is not recommended."
+    ]
+  },
+  "checklist": [
+    {
+      "item": "Order receipt",
+      "status": "missing",
+      "evidence_id": null,
+      "required": true
+    },
+    {
+      "item": "Product description and return policy shown at checkout",
+      "status": "available",
+      "evidence_id": "ev_9",
+      "required": true
+    },
+    {
+      "item": "Customer communication",
+      "status": "available",
+      "evidence_id": "ev_8",
+      "required": false
+    },
+    {
+      "item": "Delivery proof",
+      "status": "available",
+      "evidence_id": "ev_10",
+      "required": false
+    }
+  ],
+  "claims": [],
+  "rejected_claims": [],
+  "letter_md": "",
+  "memory": [],
+  "cost": {
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "recall_calls": 0,
+    "usd": 0.0
+  }
+}

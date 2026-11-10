@@ -1,0 +1,83 @@
+# `make up` starts db + api + web. Hindsight (~9 GB image) is behind the "memory" profile:
+# `make up-memory` (needs HINDSIGHT_API_LLM_API_KEY in .env).
+services:
+  db:
+    image: pgvector/pgvector:pg17
+    environment:
+      POSTGRES_USER: ${POSTGRES_USER:-recoup}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-recoup}
+      POSTGRES_DB: ${POSTGRES_DB:-recoup}
+    ports:
+      - "${DB_PORT:-5432}:5432"
+    volumes:
+      - db-data:/var/lib/postgresql/data
+      - ./infra/postgres/init.sql:/docker-entrypoint-initdb.d/init.sql:ro
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ${POSTGRES_USER:-recoup} -d ${POSTGRES_DB:-recoup}"]
+      interval: 5s
+      timeout: 3s
+      retries: 20
+
+  api:
+    build: ./apps/api
+    env_file:
+      - path: .env
+        required: false
+    environment:
+      DATABASE_URL: postgresql://${POSTGRES_USER:-recoup}:${POSTGRES_PASSWORD:-recoup}@db:5432/${POSTGRES_DB:-recoup}
+      HINDSIGHT_URL: http://hindsight:8888
+      FIXTURES_DIR: /fixtures
+      UPLOAD_DIR: /data/uploads
+      WATCHFILES_FORCE_POLLING: "true"
+    ports:
+      - "${API_PORT:-8000}:8000"
+    volumes:
+      - ./apps/api/app:/app/app
+      - ./apps/api/alembic.ini:/app/alembic.ini:ro
+      - uploads:/data/uploads
+      - ./fixtures:/fixtures:ro
+    depends_on:
+      db:
+        condition: service_healthy
+
+  web:
+    build: ./apps/web
+    env_file:
+      - path: .env
+        required: false
+    environment:
+      WATCHPACK_POLLING: "true"
+      CHOKIDAR_USEPOLLING: "true"
+      API_INTERNAL_URL: http://api:8000 # server-side fetches use the compose network
+      FIXTURES_DIR: /fixtures
+    ports:
+      - "${WEB_PORT:-3000}:3000"
+    volumes:
+      - ./apps/web:/app
+      - ./fixtures:/fixtures:ro
+      - /app/node_modules
+      - /app/.next
+    depends_on:
+      - api
+
+  hindsight:
+    profiles: ["memory"]
+    image: ghcr.io/vectorize-io/hindsight:${HINDSIGHT_VERSION:-1.2.0}
+    shm_size: 1g
+    stop_grace_period: 75s
+    env_file:
+      - path: .env
+        required: false
+    environment:
+      HINDSIGHT_API_DATABASE_URL: postgresql://${POSTGRES_USER:-recoup}:${POSTGRES_PASSWORD:-recoup}@db:5432/hindsight
+      HINDSIGHT_API_WORKER_ID: hindsight-dev
+    ports:
+      - "8888:8888" # API
+      - "9999:9999" # control plane UI
+    depends_on:
+      db:
+        condition: service_healthy
+
+volumes:
+  db-data:
+  uploads:

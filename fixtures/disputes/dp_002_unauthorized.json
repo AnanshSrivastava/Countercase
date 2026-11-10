@@ -1,0 +1,52 @@
+{
+  "dispute": {
+    "id": "dp_002",
+    "seller_id": "sel_demo",
+    "processor": "stripe",
+    "processor_dispute_id": "du_test_002",
+    "amount": 8400,
+    "currency": "usd",
+    "reason_raw": "fraudulent",
+    "category": "unauthorized",
+    "status": "needs_response",
+    "created_at": "2026-10-03T09:30:00Z",
+    "deadline_at": "2026-10-10T23:59:59Z",
+    "customer_hash": "c_41be0c55",
+    "order_id": "ord_61",
+    "product_sku": "SKU-TEE-03",
+    "courier": "CourierY",
+    "evidence": ["ev_5", "ev_6", "ev_7"]
+  },
+  "evidence": [
+    {
+      "id": "ev_5",
+      "dispute_id": "dp_002",
+      "type": "ip_device",
+      "source": "shop_api",
+      "verified": true,
+      "summary": "Checkout from device d_7a1 and IP 203.0.113.24, same as two earlier undisputed orders",
+      "uri": null,
+      "captured_at": "2026-09-20T18:44:00Z"
+    },
+    {
+      "id": "ev_6",
+      "dispute_id": "dp_002",
+      "type": "prior_orders",
+      "source": "shop_api",
+      "verified": true,
+      "summary": "2 prior undisputed orders (ord_12 on 2026-06-02, ord_37 on 2026-08-11) with same email hash, device and shipping address",
+      "uri": null,
+      "captured_at": "2026-10-03T09:31:00Z"
+    },
+    {
+      "id": "ev_7",
+      "dispute_id": "dp_002",
+      "type": "order_receipt",
+      "source": "stripe",
+      "verified": true,
+      "summary": "Charge ch_test_61: $84.00, AVS and CVC checks passed",
+      "uri": null,
+      "captured_at": "2026-09-20T18:44:30Z"
+    }
+  ]
+}

@@ -1,0 +1,1166 @@
+{
+ "synthetic": true,
+ "seller_id": "sel_demo",
+ "seed": 7,
+ "cases": [
+  {
+   "id": "hist_001",
+   "created": "2026-03-12",
+   "resolved": "2026-04-05",
+   "category": "not_received",
+   "courier": "CourierY",
+   "sku": "SKU-TEE-04",
+   "amount": 4900,
+   "currency": "usd",
+   "customer": "c_5c57722e",
+   "evidence": [
+    "order_receipt",
+    "tracking",
+    "signature"
+   ],
+   "outcome": "won",
+   "true_win_probability": 0.33,
+   "holdout": false
+  },
+  {
+   "id": "hist_002",
+   "created": "2026-03-13",
+   "resolved": "2026-04-21",
+   "category": "unauthorized",
+   "courier": "CourierZ",
+   "sku": "SKU-TEE-04",
+   "amount": 4900,
+   "currency": "usd",
+   "customer": "c_7e26f36a",
+   "evidence": [
+    "order_receipt",
+    "prior_orders"
+   ],
+   "outcome": "won",
+   "true_win_probability": 0.65,
+   "holdout": false
+  },
+  {
+   "id": "hist_003",
+   "created": "2026-03-13",
+   "resolved": "2026-04-11",
+   "category": "refund_not_processed",
+   "courier": "CourierX",
+   "sku": "SKU-CAP-03",
+   "amount": 2500,
+   "currency": "usd",
+   "customer": "c_3c2496eb",
+   "evidence": [
+    "order_receipt"
+   ],
+   "outcome": "accepted",
+   "true_win_probability": 0.12,
+   "holdout": false
+  },
+  {
+   "id": "hist_004",
+   "created": "2026-03-17",
+   "resolved": "2026-04-14",
+   "category": "not_received",
+   "courier": "CourierX",
+   "sku": "SKU-LAMP-02",
+   "amount": 8900,
+   "currency": "usd",
+   "customer": "c_5d39d0a8",
+   "evidence": [
+    "order_receipt",
+    "tracking",
+    "customer_message"
+   ],
+   "outcome": "won",
+   "true_win_probability": 0.25,
+   "holdout": false
+  },
+  {
+   "id": "hist_005",
+   "created": "2026-03-18",
+   "resolved": "2026-04-18",
+   "category": "not_received",
+   "courier": "CourierY",
+   "sku": "SKU-CAP-03",
+   "amount": 2500,
+   "currency": "usd",
+   "customer": "c_37c60e98",
+   "evidence": [
+    "order_receipt",
+    "tracking",
+    "delivery_photo",
+    "signature"
+   ],
+   "outcome": "won",
+   "true_win_probability": 0.83,
+   "holdout": false
+  },
+  {
+   "id": "hist_006",
+   "created": "2026-03-18",
+   "resolved": "2026-04-18",
+   "category": "not_received",
+   "courier": "CourierY",
+   "sku": "SKU-CAP-03",
+   "amount": 2500,
+   "currency": "usd",
+   "customer": "c_7936d536",
+   "evidence": [
+    "order_receipt",
+    "tracking",
+    "signature",
+    "customer_message"
+   ],
+   "outcome": "lost",
+   "true_win_probability": 0.33,
+   "holdout": false
+  },
+  {
+   "id": "hist_007",
+   "created": "2026-03-19",
+   "resolved": "2026-04-17",
+   "category": "duplicate",
+   "courier": "CourierY",
+   "sku": "SKU-BAG-07",
+   "amount": 15900,
+   "currency": "usd",
+   "customer": "c_f3b7a50d",
+   "evidence": [
+    "order_receipt"
+   ],
+   "outcome": "won",
+   "true_win_probability": 0.6,
+   "holdout": true
+  },
+  {
+   "id": "hist_008",
+   "created": "2026-03-20",
+   "resolved": "2026-04-12",
+   "category": "not_received",
+   "courier": "CourierX",
+   "sku": "SKU-LAMP-02",
+   "amount": 8900,
+   "currency": "usd",
+   "customer": "c_52c4641b",
+   "evidence": [
+    "order_receipt",
+    "tracking",
+    "delivery_photo",
+    "customer_message"
+   ],
+   "outcome": "won",
+   "true_win_probability": 0.75,
+   "holdout": false
+  },
+  {
+   "id": "hist_009",
+   "created": "2026-03-30",
+   "resolved": "2026-05-04",
+   "category": "not_received",
+   "courier": "CourierZ",
+   "sku": "SKU-BAG-07",
+   "amount": 15900,
+   "currency": "usd",
+   "customer": "c_e2856ec6",
+   "evidence": [
+    "order_receipt",
+    "tracking",
+    "customer_message"
+   ],
+   "outcome": "won",
+   "true_win_probability": 0.25,
+   "holdout": false
+  },
+  {
+   "id": "hist_010",
+   "created": "2026-04-03",
+   "resolved": "2026-05-02",
+   "category": "not_received",
+   "courier": "CourierZ",
+   "sku": "SKU-BAG-07",
+   "amount": 15900,
+   "currency": "usd",
+   "customer": "c_325b55dd",
+   "evidence": [
+    "order_receipt",
+    "tracking"
+   ],
+   "outcome": "won",
+   "true_win_probability": 0.25,
+   "holdout": true
+  },
+  {
+   "id": "hist_011",
+   "created": "2026-04-04",
+   "resolved": "2026-05-01",
+   "category": "not_received",
+   "courier": "CourierY",
+   "sku": "SKU-MUG-01",
+   "amount": 12900,
+   "currency": "usd",
+   "customer": "c_66c1494e",
+   "evidence": [
+    "order_receipt",
+    "tracking",
+    "delivery_photo"
+   ],
+   "outcome": "lost",
+   "true_win_probability": 0.75,
+   "holdout": false
+  },
+  {
+   "id": "hist_012",
+   "created": "2026-04-08",
+   "resolved": "2026-05-15",
+   "category": "not_received",
+   "courier": "CourierZ",
+   "sku": "SKU-BAG-07",
+   "amount": 15900,
+   "currency": "usd",
+   "customer": "c_61b2480c",
+   "evidence": [
+    "order_receipt",
+    "tracking",
+    "delivery_photo"
+   ],
+   "outcome": "lost",
+   "true_win_probability": 0.75,
+   "holdout": false
+  },
+  {
+   "id": "hist_013",
+   "created": "2026-04-22",
+   "resolved": "2026-05-16",
+   "category": "unauthorized",
+   "courier": "CourierZ",
+   "sku": "SKU-TEE-04",
+   "amount": 4900,
+   "currency": "usd",
+   "customer": "c_a70828a7",
+   "evidence": [
+    "order_receipt",
+    "prior_orders"
+   ],
+   "outcome": "won",
+   "true_win_probability": 0.65,
+   "holdout": true
+  },
+  {
+   "id": "hist_014",
+   "created": "2026-04-25",
+   "resolved": "2026-05-19",
+   "category": "not_received",
+   "courier": "CourierZ",
+   "sku": "SKU-TEE-04",
+   "amount": 4900,
+   "currency": "usd",
+   "customer": "c_498dbfa8",
+   "evidence": [
+    "order_receipt",
+    "tracking",
+    "delivery_photo",
+    "signature"
+   ],
+   "outcome": "won",
+   "true_win_probability": 0.83,
+   "holdout": false
+  },
+  {
+   "id": "hist_015",
+   "created": "2026-05-02",
+   "resolved": "2026-06-09",
+   "category": "not_received",
+   "courier": "CourierY",
+   "sku": "SKU-MUG-01",
+   "amount": 12900,
+   "currency": "usd",
+   "customer": "c_ce3fa028",
+   "evidence": [
+    "order_receipt",
+    "tracking",
+    "signature"
+   ],
+   "outcome": "lost",
+   "true_win_probability": 0.33,
+   "holdout": false
+  },
+  {
+   "id": "hist_016",
+   "created": "2026-05-03",
+   "resolved": "2026-06-06",
+   "category": "not_as_described",
+   "courier": "CourierY",
+   "sku": "SKU-LAMP-02",
+   "amount": 8900,
+   "currency": "usd",
+   "customer": "c_5ec69be3",
+   "evidence": [
+    "order_receipt",
+    "refund_policy"
+   ],
+   "outcome": "won",
+   "true_win_probability": 0.6,
+   "holdout": false
+  },
+  {
+   "id": "hist_017",
+   "created": "2026-05-09",
+   "resolved": "2026-06-01",
+   "category": "not_received",
+   "courier": "CourierX",
+   "sku": "SKU-CAP-03",
+   "amount": 2500,
+   "currency": "usd",
+   "customer": "c_35372235",
+   "evidence": [
+    "order_receipt",
+    "tracking",
+    "delivery_photo"
+   ],
+   "outcome": "lost",
+   "true_win_probability": 0.75,
+   "holdout": false
+  },
+  {
+   "id": "hist_018",
+   "created": "2026-05-11",
+   "resolved": "2026-06-14",
+   "category": "not_as_described",
+   "courier": "CourierY",
+   "sku": "SKU-MUG-01",
+   "amount": 12900,
+   "currency": "usd",
+   "customer": "c_fc8e80b3",
+   "evidence": [
+    "order_receipt",
+    "refund_policy"
+   ],
+   "outcome": "lost",
+   "true_win_probability": 0.6,
+   "holdout": true
+  },
+  {
+   "id": "hist_019",
+   "created": "2026-05-11",
+   "resolved": "2026-06-14",
+   "category": "unauthorized",
+   "courier": "CourierX",
+   "sku": "SKU-TEE-04",
+   "amount": 4900,
+   "currency": "usd",
+   "customer": "c_727d8349",
+   "evidence": [
+    "order_receipt",
+    "ip_device"
+   ],
+   "outcome": "won",
+   "true_win_probability": 0.3,
+   "holdout": false
+  },
+  {
+   "id": "hist_020",
+   "created": "2026-05-13",
+   "resolved": "2026-06-03",
+   "category": "refund_not_processed",
+   "courier": "CourierY",
+   "sku": "SKU-TEE-04",
+   "amount": 4900,
+   "currency": "usd",
+   "customer": "c_298cb3a5",
+   "evidence": [
+    "order_receipt"
+   ],
+   "outcome": "lost",
+   "true_win_probability": 0.12,
+   "holdout": true
+  },
+  {
+   "id": "hist_021",
+   "created": "2026-05-20",
+   "resolved": "2026-06-14",
+   "category": "not_received",
+   "courier": "CourierZ",
+   "sku": "SKU-BAG-07",
+   "amount": 15900,
+   "currency": "usd",
+   "customer": "c_23c49cae",
+   "evidence": [
+    "order_receipt",
+    "tracking",
+    "customer_message"
+   ],
+   "outcome": "lost",
+   "true_win_probability": 0.25,
+   "holdout": false
+  },
+  {
+   "id": "hist_022",
+   "created": "2026-05-20",
+   "resolved": "2026-06-15",
+   "category": "not_received",
+   "courier": "CourierY",
+   "sku": "SKU-LAMP-02",
+   "amount": 8900,
+   "currency": "usd",
+   "customer": "c_87ddaeb7",
+   "evidence": [
+    "order_receipt",
+    "tracking",
+    "delivery_photo"
+   ],
+   "outcome": "won",
+   "true_win_probability": 0.75,
+   "holdout": false
+  },
+  {
+   "id": "hist_023",
+   "created": "2026-05-27",
+   "resolved": "2026-06-19",
+   "category": "unauthorized",
+   "courier": "CourierZ",
+   "sku": "SKU-TEE-04",
+   "amount": 4900,
+   "currency": "usd",
+   "customer": "c_34893498",
+   "evidence": [
+    "order_receipt",
+    "prior_orders"
+   ],
+   "outcome": "won",
+   "true_win_probability": 0.65,
+   "holdout": false
+  },
+  {
+   "id": "hist_024",
+   "created": "2026-05-28",
+   "resolved": "2026-07-01",
+   "category": "not_received",
+   "courier": "CourierY",
+   "sku": "SKU-LAMP-02",
+   "amount": 8900,
+   "currency": "usd",
+   "customer": "c_7f1d490e",
+   "evidence": [
+    "order_receipt",
+    "tracking",
+    "delivery_photo"
+   ],
+   "outcome": "won",
+   "true_win_probability": 0.75,
+   "holdout": false
+  },
+  {
+   "id": "hist_025",
+   "created": "2026-05-31",
+   "resolved": "2026-07-05",
+   "category": "not_received",
+   "courier": "CourierZ",
+   "sku": "SKU-BAG-07",
+   "amount": 15900,
+   "currency": "usd",
+   "customer": "c_873b9903",
+   "evidence": [
+    "order_receipt",
+    "tracking",
+    "delivery_photo"
+   ],
+   "outcome": "won",
+   "true_win_probability": 0.75,
+   "holdout": true
+  },
+  {
+   "id": "hist_026",
+   "created": "2026-06-04",
+   "resolved": "2026-06-24",
+   "category": "unauthorized",
+   "courier": "CourierY",
+   "sku": "SKU-LAMP-02",
+   "amount": 8900,
+   "currency": "usd",
+   "customer": "c_8005ce74",
+   "evidence": [
+    "order_receipt",
+    "prior_orders",
+    "ip_device",
+    "customer_message"
+   ],
+   "outcome": "won",
+   "true_win_probability": 0.75,
+   "holdout": false
+  },
+  {
+   "id": "hist_027",
+   "created": "2026-06-06",
+   "resolved": "2026-07-12",
+   "category": "not_received",
+   "courier": "CourierX",
+   "sku": "SKU-MUG-01",
+   "amount": 12900,
+   "currency": "usd",
+   "customer": "c_15a0cce6",
+   "evidence": [
+    "order_receipt",
+    "tracking",
+    "signature"
+   ],
+   "outcome": "lost",
+   "true_win_probability": 0.33,
+   "holdout": false
+  },
+  {
+   "id": "hist_028",
+   "created": "2026-06-10",
+   "resolved": "2026-07-18",
+   "category": "refund_not_processed",
+   "courier": "CourierZ",
+   "sku": "SKU-MUG-01",
+   "amount": 12900,
+   "currency": "usd",
+   "customer": "c_353c631c",
+   "evidence": [
+    "order_receipt",
+    "customer_message"
+   ],
+   "outcome": "accepted",
+   "true_win_probability": 0.12,
+   "holdout": true
+  },
+  {
+   "id": "hist_029",
+   "created": "2026-06-19",
+   "resolved": "2026-07-25",
+   "category": "not_received",
+   "courier": "CourierY",
+   "sku": "SKU-MUG-01",
+   "amount": 12900,
+   "currency": "usd",
+   "customer": "c_40783f0a",
+   "evidence": [
+    "order_receipt",
+    "tracking",
+    "delivery_photo",
+    "customer_message"
+   ],
+   "outcome": "won",
+   "true_win_probability": 0.75,
+   "holdout": false
+  },
+  {
+   "id": "hist_030",
+   "created": "2026-06-23",
+   "resolved": "2026-07-30",
+   "category": "not_received",
+   "courier": "CourierX",
+   "sku": "SKU-LAMP-02",
+   "amount": 8900,
+   "currency": "usd",
+   "customer": "c_ed9bf0b6",
+   "evidence": [
+    "order_receipt",
+    "tracking",
+    "delivery_photo"
+   ],
+   "outcome": "won",
+   "true_win_probability": 0.75,
+   "holdout": false
+  },
+  {
+   "id": "hist_031",
+   "created": "2026-06-25",
+   "resolved": "2026-07-17",
+   "category": "not_as_described",
+   "courier": "CourierX",
+   "sku": "SKU-MUG-01",
+   "amount": 12900,
+   "currency": "usd",
+   "customer": "c_a26aa0ae",
+   "evidence": [
+    "order_receipt"
+   ],
+   "outcome": "won",
+   "true_win_probability": 0.35,
+   "holdout": false
+  },
+  {
+   "id": "hist_032",
+   "created": "2026-07-06",
+   "resolved": "2026-08-10",
+   "category": "refund_not_processed",
+   "courier": "CourierZ",
+   "sku": "SKU-BAG-07",
+   "amount": 15900,
+   "currency": "usd",
+   "customer": "c_721888ff",
+   "evidence": [
+    "order_receipt"
+   ],
+   "outcome": "accepted",
+   "true_win_probability": 0.12,
+   "holdout": false
+  },
+  {
+   "id": "hist_033",
+   "created": "2026-07-15",
+   "resolved": "2026-08-17",
+   "category": "refund_not_processed",
+   "courier": "CourierY",
+   "sku": "SKU-CAP-03",
+   "amount": 2500,
+   "currency": "usd",
+   "customer": "c_4a327e2d",
+   "evidence": [
+    "order_receipt"
+   ],
+   "outcome": "accepted",
+   "true_win_probability": 0.12,
+   "holdout": false
+  },
+  {
+   "id": "hist_034",
+   "created": "2026-07-23",
+   "resolved": "2026-08-13",
+   "category": "not_received",
+   "courier": "CourierZ",
+   "sku": "SKU-MUG-01",
+   "amount": 12900,
+   "currency": "usd",
+   "customer": "c_2ac34446",
+   "evidence": [
+    "order_receipt",
+    "tracking",
+    "delivery_photo",
+    "customer_message"
+   ],
+   "outcome": "won",
+   "true_win_probability": 0.75,
+   "holdout": false
+  },
+  {
+   "id": "hist_035",
+   "created": "2026-07-25",
+   "resolved": "2026-08-25",
+   "category": "not_received",
+   "courier": "CourierY",
+   "sku": "SKU-TEE-04",
+   "amount": 4900,
+   "currency": "usd",
+   "customer": "c_d0a6ec17",
+   "evidence": [
+    "order_receipt",
+    "tracking",
+    "delivery_photo"
+   ],
+   "outcome": "won",
+   "true_win_probability": 0.75,
+   "holdout": false
+  },
+  {
+   "id": "hist_036",
+   "created": "2026-07-25",
+   "resolved": "2026-08-27",
+   "category": "not_as_described",
+   "courier": "CourierX",
+   "sku": "SKU-LAMP-02",
+   "amount": 8900,
+   "currency": "usd",
+   "customer": "c_8857f9a4",
+   "evidence": [
+    "order_receipt",
+    "refund_policy",
+    "customer_message"
+   ],
+   "outcome": "lost",
+   "true_win_probability": 0.6,
+   "holdout": false
+  },
+  {
+   "id": "hist_037",
+   "created": "2026-07-26",
+   "resolved": "2026-08-16",
+   "category": "not_as_described",
+   "courier": "CourierX",
+   "sku": "SKU-BAG-07",
+   "amount": 15900,
+   "currency": "usd",
+   "customer": "c_e9d625c9",
+   "evidence": [
+    "order_receipt",
+    "refund_policy"
+   ],
+   "outcome": "won",
+   "true_win_probability": 0.6,
+   "holdout": false
+  },
+  {
+   "id": "hist_038",
+   "created": "2026-07-27",
+   "resolved": "2026-08-15",
+   "category": "not_received",
+   "courier": "CourierY",
+   "sku": "SKU-MUG-01",
+   "amount": 12900,
+   "currency": "usd",
+   "customer": "c_7e834904",
+   "evidence": [
+    "order_receipt",
+    "tracking"
+   ],
+   "outcome": "lost",
+   "true_win_probability": 0.25,
+   "holdout": false
+  },
+  {
+   "id": "hist_039",
+   "created": "2026-07-28",
+   "resolved": "2026-08-21",
+   "category": "not_received",
+   "courier": "CourierY",
+   "sku": "SKU-BAG-07",
+   "amount": 15900,
+   "currency": "usd",
+   "customer": "c_53eab031",
+   "evidence": [
+    "order_receipt",
+    "tracking"
+   ],
+   "outcome": "lost",
+   "true_win_probability": 0.25,
+   "holdout": false
+  },
+  {
+   "id": "hist_032x",
+   "created": "2026-07-28",
+   "resolved": "2026-08-18",
+   "category": "not_received",
+   "courier": "CourierX",
+   "sku": "SKU-MUG-01",
+   "amount": 12900,
+   "currency": "usd",
+   "customer": "c_98a4e451561e529b",
+   "evidence": [
+    "order_receipt",
+    "tracking"
+   ],
+   "outcome": "lost",
+   "true_win_probability": 0.25,
+   "holdout": false,
+   "note": "Customer later confirmed the parcel had been left with a neighbour."
+  },
+  {
+   "id": "hist_031x",
+   "created": "2026-07-30",
+   "resolved": "2026-08-20",
+   "category": "not_received",
+   "courier": "CourierX",
+   "sku": "SKU-MUG-01",
+   "amount": 12900,
+   "currency": "usd",
+   "customer": "c_9f2a71d0",
+   "evidence": [
+    "order_receipt",
+    "tracking"
+   ],
+   "outcome": "lost",
+   "true_win_probability": 0.25,
+   "holdout": false,
+   "note": "Customer later confirmed the parcel had been left with a neighbour."
+  },
+  {
+   "id": "hist_040",
+   "created": "2026-08-05",
+   "resolved": "2026-09-02",
+   "category": "not_received",
+   "courier": "CourierX",
+   "sku": "SKU-TEE-04",
+   "amount": 4900,
+   "currency": "usd",
+   "customer": "c_eea7bb64",
+   "evidence": [
+    "order_receipt",
+    "tracking",
+    "customer_message"
+   ],
+   "outcome": "lost",
+   "true_win_probability": 0.03,
+   "holdout": false
+  },
+  {
+   "id": "hist_041",
+   "created": "2026-08-06",
+   "resolved": "2026-09-10",
+   "category": "not_received",
+   "courier": "CourierX",
+   "sku": "SKU-CAP-03",
+   "amount": 2500,
+   "currency": "usd",
+   "customer": "c_ccb1c51d",
+   "evidence": [
+    "order_receipt",
+    "tracking",
+    "delivery_photo"
+   ],
+   "outcome": "lost",
+   "true_win_probability": 0.45,
+   "holdout": false
+  },
+  {
+   "id": "hist_042",
+   "created": "2026-08-10",
+   "resolved": "2026-09-03",
+   "category": "unauthorized",
+   "courier": "CourierZ",
+   "sku": "SKU-MUG-01",
+   "amount": 12900,
+   "currency": "usd",
+   "customer": "c_570dc195",
+   "evidence": [
+    "order_receipt",
+    "prior_orders"
+   ],
+   "outcome": "won",
+   "true_win_probability": 0.65,
+   "holdout": false
+  },
+  {
+   "id": "hist_043",
+   "created": "2026-08-10",
+   "resolved": "2026-09-08",
+   "category": "not_received",
+   "courier": "CourierY",
+   "sku": "SKU-CAP-03",
+   "amount": 2500,
+   "currency": "usd",
+   "customer": "c_f92e2339",
+   "evidence": [
+    "order_receipt",
+    "tracking",
+    "delivery_photo",
+    "signature",
+    "customer_message"
+   ],
+   "outcome": "lost",
+   "true_win_probability": 0.83,
+   "holdout": false
+  },
+  {
+   "id": "hist_044",
+   "created": "2026-08-10",
+   "resolved": "2026-08-29",
+   "category": "duplicate",
+   "courier": "CourierY",
+   "sku": "SKU-MUG-01",
+   "amount": 12900,
+   "currency": "usd",
+   "customer": "c_fa529ba3",
+   "evidence": [
+    "order_receipt",
+    "customer_message"
+   ],
+   "outcome": "lost",
+   "true_win_probability": 0.6,
+   "holdout": false
+  },
+  {
+   "id": "hist_045",
+   "created": "2026-08-12",
+   "resolved": "2026-09-20",
+   "category": "unauthorized",
+   "courier": "CourierY",
+   "sku": "SKU-MUG-01",
+   "amount": 12900,
+   "currency": "usd",
+   "customer": "c_d85bbb6b",
+   "evidence": [
+    "order_receipt",
+    "ip_device"
+   ],
+   "outcome": "lost",
+   "true_win_probability": 0.3,
+   "holdout": false
+  },
+  {
+   "id": "hist_046",
+   "created": "2026-08-15",
+   "resolved": "2026-09-22",
+   "category": "not_received",
+   "courier": "CourierZ",
+   "sku": "SKU-BAG-07",
+   "amount": 15900,
+   "currency": "usd",
+   "customer": "c_b8c9817a",
+   "evidence": [
+    "order_receipt",
+    "tracking",
+    "delivery_photo",
+    "signature",
+    "customer_message"
+   ],
+   "outcome": "lost",
+   "true_win_probability": 0.83,
+   "holdout": true
+  },
+  {
+   "id": "hist_047",
+   "created": "2026-08-20",
+   "resolved": "2026-09-17",
+   "category": "not_received",
+   "courier": "CourierY",
+   "sku": "SKU-LAMP-02",
+   "amount": 8900,
+   "currency": "usd",
+   "customer": "c_2bb71c68",
+   "evidence": [
+    "order_receipt",
+    "tracking",
+    "delivery_photo",
+    "signature"
+   ],
+   "outcome": "won",
+   "true_win_probability": 0.83,
+   "holdout": false
+  },
+  {
+   "id": "hist_048",
+   "created": "2026-08-20",
+   "resolved": "2026-09-26",
+   "category": "not_received",
+   "courier": "CourierX",
+   "sku": "SKU-LAMP-02",
+   "amount": 8900,
+   "currency": "usd",
+   "customer": "c_f0290531",
+   "evidence": [
+    "order_receipt",
+    "tracking",
+    "signature"
+   ],
+   "outcome": "lost",
+   "true_win_probability": 0.03,
+   "holdout": false
+  },
+  {
+   "id": "hist_049",
+   "created": "2026-08-22",
+   "resolved": "2026-09-24",
+   "category": "unauthorized",
+   "courier": "CourierZ",
+   "sku": "SKU-CAP-03",
+   "amount": 2500,
+   "currency": "usd",
+   "customer": "c_f2ee4e45",
+   "evidence": [
+    "order_receipt",
+    "ip_device"
+   ],
+   "outcome": "won",
+   "true_win_probability": 0.3,
+   "holdout": false
+  },
+  {
+   "id": "hist_050",
+   "created": "2026-08-23",
+   "resolved": "2026-09-15",
+   "category": "not_as_described",
+   "courier": "CourierX",
+   "sku": "SKU-TEE-04",
+   "amount": 4900,
+   "currency": "usd",
+   "customer": "c_4b3e90b7",
+   "evidence": [
+    "order_receipt",
+    "customer_message"
+   ],
+   "outcome": "lost",
+   "true_win_probability": 0.35,
+   "holdout": true
+  },
+  {
+   "id": "hist_051",
+   "created": "2026-08-25",
+   "resolved": "2026-09-17",
+   "category": "not_received",
+   "courier": "CourierX",
+   "sku": "SKU-LAMP-02",
+   "amount": 8900,
+   "currency": "usd",
+   "customer": "c_8b0d590b",
+   "evidence": [
+    "order_receipt",
+    "tracking",
+    "delivery_photo"
+   ],
+   "outcome": "lost",
+   "true_win_probability": 0.45,
+   "holdout": false
+  },
+  {
+   "id": "hist_052",
+   "created": "2026-08-27",
+   "resolved": "2026-09-20",
+   "category": "duplicate",
+   "courier": "CourierY",
+   "sku": "SKU-CAP-03",
+   "amount": 2500,
+   "currency": "usd",
+   "customer": "c_eea7bb64",
+   "evidence": [
+    "order_receipt"
+   ],
+   "outcome": "won",
+   "true_win_probability": 0.6,
+   "holdout": false
+  },
+  {
+   "id": "hist_053",
+   "created": "2026-08-29",
+   "resolved": "2026-09-30",
+   "category": "refund_not_processed",
+   "courier": "CourierX",
+   "sku": "SKU-TEE-04",
+   "amount": 4900,
+   "currency": "usd",
+   "customer": "c_15bd448f",
+   "evidence": [
+    "order_receipt"
+   ],
+   "outcome": "lost",
+   "true_win_probability": 0.12,
+   "holdout": false
+  },
+  {
+   "id": "hist_054",
+   "created": "2026-08-30",
+   "resolved": "2026-09-30",
+   "category": "unauthorized",
+   "courier": "CourierX",
+   "sku": "SKU-LAMP-02",
+   "amount": 8900,
+   "currency": "usd",
+   "customer": "c_07fa22f7",
+   "evidence": [
+    "order_receipt",
+    "prior_orders"
+   ],
+   "outcome": "lost",
+   "true_win_probability": 0.65,
+   "holdout": false
+  },
+  {
+   "id": "hist_055",
+   "created": "2026-09-01",
+   "resolved": "2026-09-30",
+   "category": "refund_not_processed",
+   "courier": "CourierX",
+   "sku": "SKU-TEE-04",
+   "amount": 4900,
+   "currency": "usd",
+   "customer": "c_759eb559",
+   "evidence": [
+    "order_receipt"
+   ],
+   "outcome": "lost",
+   "true_win_probability": 0.12,
+   "holdout": true
+  },
+  {
+   "id": "hist_056",
+   "created": "2026-09-02",
+   "resolved": "2026-09-30",
+   "category": "duplicate",
+   "courier": "CourierY",
+   "sku": "SKU-BAG-07",
+   "amount": 15900,
+   "currency": "usd",
+   "customer": "c_bfdefc15",
+   "evidence": [
+    "order_receipt"
+   ],
+   "outcome": "lost",
+   "true_win_probability": 0.6,
+   "holdout": false
+  },
+  {
+   "id": "hist_057",
+   "created": "2026-09-04",
+   "resolved": "2026-09-27",
+   "category": "unauthorized",
+   "courier": "CourierX",
+   "sku": "SKU-LAMP-02",
+   "amount": 8900,
+   "currency": "usd",
+   "customer": "c_7223c68a",
+   "evidence": [
+    "order_receipt",
+    "prior_orders"
+   ],
+   "outcome": "lost",
+   "true_win_probability": 0.65,
+   "holdout": false
+  },
+  {
+   "id": "hist_058",
+   "created": "2026-09-05",
+   "resolved": "2026-09-30",
+   "category": "unauthorized",
+   "courier": "CourierY",
+   "sku": "SKU-LAMP-02",
+   "amount": 8900,
+   "currency": "usd",
+   "customer": "c_6b86290b",
+   "evidence": [
+    "order_receipt",
+    "prior_orders",
+    "ip_device"
+   ],
+   "outcome": "won",
+   "true_win_probability": 0.75,
+   "holdout": true
+  },
+  {
+   "id": "hist_059",
+   "created": "2026-09-06",
+   "resolved": "2026-09-30",
+   "category": "not_received",
+   "courier": "CourierX",
+   "sku": "SKU-CAP-03",
+   "amount": 2500,
+   "currency": "usd",
+   "customer": "c_7936d536",
+   "evidence": [
+    "order_receipt",
+    "tracking"
+   ],
+   "outcome": "lost",
+   "true_win_probability": 0.03,
+   "holdout": false
+  },
+  {
+   "id": "hist_060",
+   "created": "2026-09-07",
+   "resolved": "2026-09-28",
+   "category": "not_received",
+   "courier": "CourierX",
+   "sku": "SKU-TEE-04",
+   "amount": 4900,
+   "currency": "usd",
+   "customer": "c_430b91ed",
+   "evidence": [
+    "order_receipt",
+    "tracking",
+    "customer_message"
+   ],
+   "outcome": "lost",
+   "true_win_probability": 0.03,
+   "holdout": true
+  }
+ ],
+ "directives": [
+  "Always cite the 7-day return policy",
+  "Never fight disputes under 20",
+  "Keep letters short and formal"
+ ],
+ "opinions": [
+  "Seller thinks CourierY is more reliable than CourierX (unverified)"
+ ]
+}

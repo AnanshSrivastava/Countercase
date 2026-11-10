@@ -1,0 +1,155 @@
+{
+  "dispute_id": "dp_003",
+  "memory_mode": "on",
+  "advice": {
+    "action": "accept",
+    "win_probability": 0.614,
+    "interval": [
+      0.331,
+      0.897
+    ],
+    "n_cases": 3,
+    "basis": "seller_history+shared_prior",
+    "amount_vs_cost": "Dispute 45.00 USD vs fee 15.00 and effort 5.00",
+    "rationale": [
+      "Estimated win chance 61% (range 33%-90%) from 3 similar past case(s).",
+      "The customer's claim appears valid based on the verified evidence; fighting is not recommended."
+    ]
+  },
+  "checklist": [
+    {
+      "item": "Order receipt",
+      "status": "missing",
+      "evidence_id": null,
+      "required": true
+    },
+    {
+      "item": "Product description and return policy shown at checkout",
+      "status": "available",
+      "evidence_id": "ev_9",
+      "required": true
+    },
+    {
+      "item": "Customer communication",
+      "status": "available",
+      "evidence_id": "ev_8",
+      "required": false
+    },
+    {
+      "item": "Delivery proof",
+      "status": "available",
+      "evidence_id": "ev_10",
+      "required": false
+    }
+  ],
+  "claims": [],
+  "rejected_claims": [],
+  "letter_md": "",
+  "memory": [
+    {
+      "id": "262e6225-eb3f-4e1d-9287-d8583ab704dc",
+      "kind": "directive",
+      "text": "Keep letters short and formal",
+      "confidence": 1.0,
+      "n_supporting": 1,
+      "event_date": null,
+      "used": true,
+      "why": "Seller directive applied to every draft",
+      "editable": true
+    },
+    {
+      "id": "734f43c6-7345-4741-aa38-3c98b109478d",
+      "kind": "directive",
+      "text": "Never fight disputes under 20",
+      "confidence": 1.0,
+      "n_supporting": 1,
+      "event_date": null,
+      "used": true,
+      "why": "Seller directive applied to every draft",
+      "editable": true
+    },
+    {
+      "id": "b7ec5958-98e0-4278-9666-9a65f6cb7a8a",
+      "kind": "directive",
+      "text": "Always cite the 7-day return policy",
+      "confidence": 1.0,
+      "n_supporting": 1,
+      "event_date": null,
+      "used": true,
+      "why": "Seller directive applied to every draft",
+      "editable": true
+    },
+    {
+      "id": "mem_23f2a4998b",
+      "kind": "case",
+      "text": "User lost a 'not received' dispute for SKU-LAMP-02 (89.00 USD) shipped by CourierX; evidence submitted includes order receipt, tracking, signature | When: Saturday, September 26, 2026 | Involving: user",
+      "confidence": 1.0,
+      "n_supporting": 1,
+      "event_date": "2026-09-26",
+      "used": true,
+      "why": "Matches this dispute's reason, courier or customer",
+      "editable": true
+    },
+    {
+      "id": "mem_c76d171f6a",
+      "kind": "case",
+      "text": "User lost an unauthorized dispute for SKU-LAMP-02 (89.00 USD) shipped by CourierX and submitted evidence: order receipt and prior orders | When: 2026-09-30 | Involving: user",
+      "confidence": 1.0,
+      "n_supporting": 1,
+      "event_date": "2026-09-30",
+      "used": true,
+      "why": "Matches this dispute's reason, courier or customer",
+      "editable": true
+    },
+    {
+      "id": "mem_656a7789e4",
+      "kind": "case",
+      "text": "User lost an unauthorized dispute for SKU-LAMP-02 (89.00 USD) shipped by CourierX, and submitted order receipt and prior orders as evidence. | When: 2026-09-27 | Involving: user",
+      "confidence": 1.0,
+      "n_supporting": 1,
+      "event_date": "2026-09-27",
+      "used": true,
+      "why": "Matches this dispute's reason, courier or customer",
+      "editable": true
+    },
+    {
+      "id": "mem_928cb4b80e",
+      "kind": "case",
+      "text": "User lost a 'not received' dispute for SKU-LAMP-02 (89.00 USD) shipped by CourierX, and submitted evidence: order receipt, tracking, delivery photo | When: 2026-09-17 | Involving: user",
+      "confidence": 1.0,
+      "n_supporting": 1,
+      "event_date": "2026-09-17",
+      "used": true,
+      "why": "Matches this dispute's reason, courier or customer",
+      "editable": true
+    },
+    {
+      "id": "mem_9f7b40bafd",
+      "kind": "case",
+      "text": "User lost a 'not as described' dispute for SKU-LAMP-02 (89.00 USD) shipped by CourierX, with evidence submitted: order receipt, refund policy, customer message. | When: Thursday, August 27, 2026 | Involving: user",
+      "confidence": 1.0,
+      "n_supporting": 1,
+      "event_date": "2026-08-27",
+      "used": true,
+      "why": "Matches this dispute's reason, courier or customer",
+      "editable": true
+    },
+    {
+      "id": "belief:courier:CourierX",
+      "kind": "belief",
+      "text": "CourierX is involved in 62% of your lost disputes since 2026-08-01 (10 of 16)",
+      "confidence": 0.61,
+      "n_supporting": 16,
+      "event_date": null,
+      "used": true,
+      "why": "Derived from 16 of your past cases (moderate)",
+      "editable": true
+    }
+  ],
+  "cost": {
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "recall_calls": 3,
+    "usd": 0.0
+  }
+}

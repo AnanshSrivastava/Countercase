@@ -1,0 +1,68 @@
+{
+  "dispute_id": "dp_001",
+  "memory_mode": "off",
+  "advice": {
+    "action": "fight",
+    "win_probability": 0.45,
+    "interval": [
+      0.084,
+      0.816
+    ],
+    "n_cases": 0,
+    "basis": "generic",
+    "amount_vs_cost": "Dispute 129.00 USD vs fee 15.00 and effort 5.00",
+    "rationale": [
+      "No history yet; using the shared-pattern rate of 45% for this dispute type.",
+      "Expected recovery exceeds the effort and fee at risk."
+    ]
+  },
+  "checklist": [
+    {
+      "item": "Order receipt",
+      "status": "available",
+      "evidence_id": "ev_3",
+      "required": true
+    },
+    {
+      "item": "Delivery proof (tracking, photo, signature)",
+      "status": "available",
+      "evidence_id": "ev_1",
+      "required": true
+    },
+    {
+      "item": "Customer communication",
+      "status": "missing",
+      "evidence_id": null,
+      "required": false
+    },
+    {
+      "item": "Refund / shipping policy shown at checkout",
+      "status": "missing",
+      "evidence_id": null,
+      "required": false
+    }
+  ],
+  "claims": [
+    {
+      "text": "Order record: Order ord_55: 1x Ceramic Mug (SKU-MUG-01), $129.00, shipping address matches billing.",
+      "evidence_id": "ev_3"
+    },
+    {
+      "text": "Delivery record: Delivered 2026-09-28 14:02, signed 'J. Doe', photo attached.",
+      "evidence_id": "ev_1"
+    },
+    {
+      "text": "Shipping record: CourierX tracking CX123456789: shipped 2026-09-24, out for delivery 2026-09-28.",
+      "evidence_id": "ev_2"
+    }
+  ],
+  "rejected_claims": [],
+  "letter_md": "To the dispute review team,\n\nOrder record: Order ord_55: 1x Ceramic Mug (SKU-MUG-01), $129.00, shipping address matches billing. [1] Delivery record: Delivered 2026-09-28 14:02, signed 'J. Doe', photo attached. [2] Shipping record: CourierX tracking CX123456789: shipped 2026-09-24, out for delivery 2026-09-28. [3]\n\nSources: [1] ev_3, [2] ev_1, [3] ev_2.",
+  "memory": [],
+  "cost": {
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "recall_calls": 0,
+    "usd": 0.0
+  }
+}

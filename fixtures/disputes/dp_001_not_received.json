@@ -1,0 +1,62 @@
+{
+  "dispute": {
+    "id": "dp_001",
+    "seller_id": "sel_demo",
+    "processor": "stripe",
+    "processor_dispute_id": "du_test_001",
+    "amount": 12900,
+    "currency": "usd",
+    "reason_raw": "product_not_received",
+    "category": "not_received",
+    "status": "needs_response",
+    "created_at": "2026-10-01T10:00:00Z",
+    "deadline_at": "2026-10-08T23:59:59Z",
+    "customer_hash": "c_9f2a71d0",
+    "order_id": "ord_55",
+    "product_sku": "SKU-MUG-01",
+    "courier": "CourierX",
+    "evidence": ["ev_1", "ev_2", "ev_3", "ev_4"]
+  },
+  "evidence": [
+    {
+      "id": "ev_1",
+      "dispute_id": "dp_001",
+      "type": "delivery_proof",
+      "source": "shipping_api",
+      "verified": true,
+      "summary": "Delivered 2026-09-28 14:02, signed 'J. Doe', photo attached",
+      "uri": "files/ev_1.jpg",
+      "captured_at": "2026-09-28T14:02:00Z"
+    },
+    {
+      "id": "ev_2",
+      "dispute_id": "dp_001",
+      "type": "tracking",
+      "source": "shipping_api",
+      "verified": true,
+      "summary": "CourierX tracking CX123456789: shipped 2026-09-24, out for delivery 2026-09-28",
+      "uri": null,
+      "captured_at": "2026-09-28T14:02:00Z"
+    },
+    {
+      "id": "ev_3",
+      "dispute_id": "dp_001",
+      "type": "order_receipt",
+      "source": "shop_api",
+      "verified": true,
+      "summary": "Order ord_55: 1x Ceramic Mug (SKU-MUG-01), $129.00, shipping address matches billing",
+      "uri": null,
+      "captured_at": "2026-09-23T08:15:00Z"
+    },
+    {
+      "id": "ev_4",
+      "dispute_id": "dp_001",
+      "type": "seller_note",
+      "source": "seller_claim",
+      "verified": false,
+      "summary": "Seller: this customer told us on chat the parcel was left with a neighbour",
+      "uri": null,
+      "captured_at": "2026-10-01T12:30:00Z"
+    }
+  ]
+}

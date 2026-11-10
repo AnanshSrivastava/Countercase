@@ -1,0 +1,33 @@
+# Render Blueprint (untested until first deploy). Set the secret env vars in the dashboard.
+databases:
+  - name: recoup-db
+    plan: free
+services:
+  - type: web
+    name: recoup-api
+    runtime: docker
+    dockerfilePath: ./apps/api/Dockerfile.prod
+    dockerContext: ./apps/api
+    healthCheckPath: /health
+    envVars:
+      - key: DATABASE_URL
+        fromDatabase: { name: recoup-db, property: connectionString }
+      - key: WEB_ORIGIN
+        sync: false
+      - { key: PAYPAL_CLIENT_ID, sync: false }
+      - { key: PAYPAL_CLIENT_SECRET, sync: false }
+      - { key: PAYPAL_WEBHOOK_ID, sync: false }
+      - { key: CUSTOMER_HASH_SALT, generateValue: true }
+      - { key: LLM_API_KEY, sync: false }
+      - { key: LLM_MODEL_DRAFT, value: claude-sonnet-5-5 }
+      - { key: UPLOAD_DIR, value: /tmp/uploads }
+      - { key: DEMO_TOOLS, value: "1" }
+      - { key: DISPUTE_SOURCE, value: core }
+  - type: web
+    name: recoup-web
+    runtime: docker
+    dockerfilePath: ./apps/web/Dockerfile.prod
+    dockerContext: ./apps/web
+    envVars:
+      - { key: NEXT_PUBLIC_API_URL, sync: false }
+      - { key: API_INTERNAL_URL, sync: false }

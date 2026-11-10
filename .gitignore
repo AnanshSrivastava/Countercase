@@ -1,0 +1,16 @@
+.env
+.env.*
+!.env.example
+node_modules/
+.next/
+.venv/
+__pycache__/
+.pytest_cache/
+.ruff_cache/
+*.pyc
+.DS_Store
+*.egg-info/
+apps/api/uploads/
+
+# agent worktrees (local only)
+.claude/worktrees/
