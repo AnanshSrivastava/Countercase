@@ -1,8 +1,8 @@
-# Recoup x PayPal: architecture
+# Countercase x PayPal: architecture
 
-Recoup defends small sellers against PayPal disputes. PayPal tells us a buyer opened a dispute,
+Countercase defends small sellers against PayPal disputes. PayPal tells us a buyer opened a dispute,
 an agent assembles only verified evidence, drafts a source-linked response, the seller approves
-it, and Recoup sends it back through PayPal's Disputes API.
+it, and Countercase sends it back through PayPal's Disputes API.
 
 ## Layers
 

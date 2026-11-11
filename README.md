@@ -1,14 +1,21 @@
-# Recoup
+# Countercase
 
-Chargeback defense for small online sellers, now for **PayPal disputes**. Every response is
-explained, source-linked, and approved by the seller before anything is sent.
+Countercase helps small online sellers manage **PayPal disputes**. Every response is explained,
+source-linked, and approved by the seller before anything is sent.
 
 Architecture and the PayPal integration: [docs/PAYPAL.md](docs/PAYPAL.md).
+
+## Deployment status
+
+The Render blueprint is untested and is not configured with live processor credentials. Countercase does not yet have
+authentication or access controls; **do not connect real seller accounts, PayPal credentials,
+webhooks, or dispute data to a publicly accessible instance** until those protections are in place.
+The hosted blueprint disables demo tools and omits PayPal credentials. Use synthetic data only.
 
 ## Run it
 
 ```
-cp .env.example .env            # then: DEMO_TOOLS=1 for the demo tools; add a Groq key for Hindsight (see D-7)
+cp .env.example .env            # local demo only: set DEMO_TOOLS=1 locally; add a Groq key for Hindsight (see D-7)
 make up                         # db + api (migrations run on start) + web   -> http://localhost:3000
 make seed-fixtures seed-core    # 3 fixture disputes + 62 resolved synthetic disputes (Insights)
 make demo-reset                 # 3 live demo disputes through the real webhook path (needs DEMO_TOOLS=1)

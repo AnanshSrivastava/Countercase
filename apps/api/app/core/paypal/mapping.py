@@ -1,6 +1,6 @@
-"""Pure PayPal <-> Recoup mapping. No I/O, so it is cheap to test and easy to audit.
+"""Pure PayPal <-> Countercase mapping. No I/O, so it is cheap to test and easy to audit.
 
-Where PayPal's vocabulary has no clean Recoup equivalent the value is left unmapped (status kept)
+Where PayPal's vocabulary has no clean Countercase equivalent the value is left unmapped (status kept)
 rather than guessed.
 """
 
@@ -11,7 +11,7 @@ from decimal import ROUND_HALF_UP, Decimal
 
 from app.core.money import ZERO_DECIMAL
 
-# PayPal dispute `status` -> Recoup status. Anything not listed keeps the current status.
+# PayPal dispute `status` -> Countercase status. Anything not listed keeps the current status.
 PAYPAL_STATUS = {
     "OPEN": "needs_response",
     "WAITING_FOR_SELLER_RESPONSE": "needs_response",
@@ -30,14 +30,14 @@ PAYPAL_OUTCOME = {
 }
 
 
-def recoup_status(paypal_status: str | None, outcome_code: str | None) -> str | None:
+def map_dispute_status(paypal_status: str | None, outcome_code: str | None) -> str | None:
     if paypal_status == "RESOLVED":
         return PAYPAL_OUTCOME.get(outcome_code or "")
     return PAYPAL_STATUS.get(paypal_status or "")
 
 
 def to_minor(value: str, currency: str) -> int:
-    """PayPal sends decimal strings ('129.00'); Recoup stores minor units."""
+    """PayPal sends decimal strings ('129.00'); Countercase stores minor units."""
     exp = 0 if currency.lower() in ZERO_DECIMAL else 2
     return int((Decimal(value) * (10**exp)).quantize(Decimal(1), rounding=ROUND_HALF_UP))
 

@@ -168,7 +168,7 @@ def _create(
     category, explanation, needs_review = safe_classify(reason)
     created_at = mapping.parse_ts(merged.get("create_time")) or event_at
     due = mapping.parse_ts(merged.get("seller_response_due_date"))
-    status = mapping.recoup_status(
+    status = mapping.map_dispute_status(
         merged.get("status"), (merged.get("dispute_outcome") or {}).get("outcome_code")
     )
     ident = _identifier(txn) or seller_txn or merged["dispute_id"]
@@ -203,7 +203,7 @@ def _create(
 
 def _update(row: DisputeRow, resource: dict, event_at: datetime) -> None:
     outcome = (resource.get("dispute_outcome") or {}).get("outcome_code")
-    target = mapping.recoup_status(resource.get("status"), outcome)
+    target = mapping.map_dispute_status(resource.get("status"), outcome)
     row.processor_status = resource.get("status") or row.processor_status
     if target is not None:
         row.status = _guard(row.status, target)

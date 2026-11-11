@@ -80,7 +80,7 @@ export function AcceptPanel({
     <section className="rounded-lg border border-amber-300 bg-amber-50 p-4 dark:border-amber-900 dark:bg-amber-950/40">
       <h2 className="text-lg font-semibold">Accept this dispute</h2>
       <p className="mt-1 text-sm">
-        Recoup did not draft a rebuttal because the evidence suggests the customer is probably right.
+        Countercase did not draft a rebuttal because the evidence suggests the customer is probably right.
         Fighting a claim that looks valid usually loses the amount and the fee anyway.
       </p>
       {rationale.length > 0 && (

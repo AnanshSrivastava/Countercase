@@ -67,7 +67,7 @@ export function LearnedSuggestions({
 
   return (
     <section className="rounded-lg border border-zinc-200 bg-white p-4 dark:border-zinc-800 dark:bg-zinc-900">
-      <h2 className="font-semibold">Should Recoup remember this?</h2>
+      <h2 className="font-semibold">Should Countercase remember this?</h2>
       <p className="text-sm text-zinc-600 dark:text-zinc-400">
         Based on what you just did. A rule is only saved if you say yes, and you can delete it later.
       </p>

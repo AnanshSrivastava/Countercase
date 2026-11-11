@@ -27,7 +27,7 @@ Status of each: **Proposed** until accepted in [DECISIONS.md](DECISIONS.md). Ord
 ## D. Positioning and numbers
 
 14. **Soften the statistics.** The 44.6% / 10.7% figures are vendor-reported (Chargebacks911, self-reported). Use "~45% win rate when merchants fight, ~11% net recovery" with the source on the slide and the word "reported".
-15. **One-sentence pitch:** "Recoup is the chargeback agent that remembers every dispute you have ever had, and shows its work." Lead with memory, not with the market size.
+15. **One-sentence pitch:** "Countercase is the chargeback agent that remembers every dispute you have ever had, and shows its work." Lead with memory, not with the market size.
 16. **Name the Indian angle carefully.** Judges may notice chargebacks are less central to UPI. Keep the story "card-accepting and cross-border sellers first", use ₹ amounts in the demo data only if the demo seller is an Indian exporter.
 
 ## E. Small additions worth having

@@ -81,7 +81,7 @@ def test_money_is_converted_to_minor_units() -> None:
     ],
 )
 def test_status_mapping(status, outcome, expected) -> None:
-    assert mapping.recoup_status(status, outcome) == expected
+    assert mapping.map_dispute_status(status, outcome) == expected
 
 
 def test_evidence_uses_typed_fulfilment_proof_when_tracking_is_known() -> None:

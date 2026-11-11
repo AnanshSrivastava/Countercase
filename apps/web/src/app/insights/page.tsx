@@ -4,7 +4,7 @@ import { ErrorPanel } from "@/components/ErrorPanel";
 import { InsightsView } from "@/components/insights/InsightsView";
 import { getInsights } from "@/lib/insights-data";
 
-export const metadata = { title: "Insights · Recoup" };
+export const metadata = { title: "Insights · Countercase" };
 
 export default function InsightsPage() {
   return (

@@ -4,16 +4,16 @@ services:
   db:
     image: pgvector/pgvector:pg17
     environment:
-      POSTGRES_USER: ${POSTGRES_USER:-recoup}
-      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-recoup}
-      POSTGRES_DB: ${POSTGRES_DB:-recoup}
+      POSTGRES_USER: ${POSTGRES_USER:-countercase}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-countercase}
+      POSTGRES_DB: ${POSTGRES_DB:-countercase}
     ports:
       - "${DB_PORT:-5432}:5432"
     volumes:
       - db-data:/var/lib/postgresql/data
       - ./infra/postgres/init.sql:/docker-entrypoint-initdb.d/init.sql:ro
     healthcheck:
-      test: ["CMD-SHELL", "pg_isready -U ${POSTGRES_USER:-recoup} -d ${POSTGRES_DB:-recoup}"]
+      test: ["CMD-SHELL", "pg_isready -U ${POSTGRES_USER:-countercase} -d ${POSTGRES_DB:-countercase}"]
       interval: 5s
       timeout: 3s
       retries: 20
@@ -24,7 +24,7 @@ services:
       - path: .env
         required: false
     environment:
-      DATABASE_URL: postgresql://${POSTGRES_USER:-recoup}:${POSTGRES_PASSWORD:-recoup}@db:5432/${POSTGRES_DB:-recoup}
+      DATABASE_URL: postgresql://${POSTGRES_USER:-countercase}:${POSTGRES_PASSWORD:-countercase}@db:5432/${POSTGRES_DB:-countercase}
       HINDSIGHT_URL: http://hindsight:8888
       FIXTURES_DIR: /fixtures
       UPLOAD_DIR: /data/uploads
@@ -69,7 +69,7 @@ services:
       - path: .env
         required: false
     environment:
-      HINDSIGHT_API_DATABASE_URL: postgresql://${POSTGRES_USER:-recoup}:${POSTGRES_PASSWORD:-recoup}@db:5432/hindsight
+      HINDSIGHT_API_DATABASE_URL: postgresql://${POSTGRES_USER:-countercase}:${POSTGRES_PASSWORD:-countercase}@db:5432/hindsight
       HINDSIGHT_API_WORKER_ID: hindsight-dev
     ports:
       - "8888:8888" # API

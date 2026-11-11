@@ -19,7 +19,7 @@ from app.settings import settings
 
 API_DIR = Path(__file__).resolve().parents[2]
 TEST_URL = os.environ.get(
-    "TEST_DATABASE_URL", "postgresql://recoup:recoup@localhost:5432/recoup_test"
+    "TEST_DATABASE_URL", "postgresql://countercase:countercase@localhost:5432/countercase_test"
 )
 
 

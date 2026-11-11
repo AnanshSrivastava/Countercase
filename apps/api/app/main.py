@@ -47,7 +47,7 @@ async def lifespan(_: FastAPI) -> AsyncIterator[None]:
             await task
 
 
-app = FastAPI(title="Recoup API", version="0.1.0", lifespan=lifespan)
+app = FastAPI(title="Countercase API", version="0.1.0", lifespan=lifespan)
 install_error_handlers(app)
 
 app.add_middleware(

@@ -1,7 +1,7 @@
 [project]
-name = "recoup-api"
+name = "countercase-api"
 version = "0.1.0"
-description = "Recoup backend: core (ingestion, evidence, insights) and agent (memory, drafting) routers"
+description = "Countercase API for payment dispute ingestion, evidence, insights, memory, and response drafting"
 requires-python = ">=3.12"
 dependencies = [
     "fastapi>=0.115",

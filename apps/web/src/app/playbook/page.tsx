@@ -6,7 +6,7 @@ import { BeliefChanges } from "@/features/memory/MemoryTab";
 import { getBeliefChanges, getPlaybook } from "@/features/memory/data";
 import type { Belief } from "@/features/memory/types";
 
-export const metadata = { title: "Seller Playbook · Recoup" };
+export const metadata = { title: "Seller Playbook · Countercase" };
 
 const card = "rounded-lg border border-zinc-200 bg-white p-4 dark:border-zinc-800 dark:bg-zinc-900";
 
@@ -32,7 +32,7 @@ async function PlaybookContent() {
       <header>
         <h1 className="text-2xl font-semibold">Your Playbook</h1>
         <p className="mt-1 text-sm text-zinc-600 dark:text-zinc-400">
-          What Recoup has learned about your business
+          What Countercase has learned about your business
           {book ? ` from ${book.n_cases} resolved disputes` : ""}. Every line is counted from your own cases, with its
           confidence shown. Reject anything that looks wrong on a dispute&apos;s Memory tab.
         </p>

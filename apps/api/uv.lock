@@ -977,7 +977,7 @@ wheels = [
 ]
 
 [[package]]
-name = "recoup-api"
+name = "countercase-api"
 version = "0.1.0"
 source = { virtual = "." }
 dependencies = [

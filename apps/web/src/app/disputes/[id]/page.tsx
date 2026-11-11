@@ -181,7 +181,7 @@ async function DraftTab({
   if (dispute.status === "accepted") {
     return (
       <p className="rounded-lg border border-zinc-200 bg-white p-4 text-sm dark:border-zinc-800 dark:bg-zinc-900">
-        You accepted this dispute in Recoup. If it has not been closed with your processor yet, close it
+        You accepted this dispute in Countercase. If it has not been closed with your processor yet, close it
         in your processor dashboard.
       </p>
     );

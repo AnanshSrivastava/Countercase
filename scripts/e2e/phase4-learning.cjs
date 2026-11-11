@@ -63,7 +63,7 @@ async function webhook(order, amount, reason) {
   check("result card is STILL there 3.5s later (no refresh wiped it)", (await page.getByRole("heading", { name: /PDF created, not sent/ }).count()) === 1);
   check("agent /edit was called after approval", editCalls.length >= 1 && editCalls.every((s) => s === 200), editCalls.join(","));
 
-  const panel = page.getByRole("heading", { name: "Should Recoup remember this?" });
+  const panel = page.getByRole("heading", { name: "Should Countercase remember this?" });
   check("learned-rule suggestions are shown after a big edit", (await panel.count()) === 1);
   const proposal = await page.locator("section", { has: panel }).locator("li").first().textContent();
   console.log("   proposal:", (proposal || "").replace(/\s+/g, " ").slice(0, 120));
@@ -90,7 +90,7 @@ async function webhook(order, amount, reason) {
   await page.waitForTimeout(3500);
   check("accept result and note are STILL there 3.5s later", (await page.getByText(/NOT closed with the processor/).count()) === 1);
   await page.getByRole("button", { name: "Done" }).click();
-  await page.getByText(/You accepted this dispute in Recoup/).waitFor({ timeout: 30000 });
+  await page.getByText(/You accepted this dispute in Countercase/).waitFor({ timeout: 30000 });
   const text = await page.locator("main").textContent();
   check("after reload the page does not claim 'nothing further is needed'", !/Nothing further is needed/.test(text));
   check("after reload it tells the seller to close it at the processor", /close it\s+in your processor dashboard/.test(text.replace(/\s+/g, " ")) || /processor dashboard/.test(text));

@@ -1,6 +1,6 @@
 # Demo script and runbook
 
-One sentence: **Recoup is the chargeback agent that remembers every dispute you have ever had, and shows its work.**
+One sentence: **Countercase is the chargeback agent that remembers every dispute you have ever had, and shows its work.**
 All history is synthetic and says so on screen. Numbers below were measured on the current seed; re-measure after changing data.
 
 ## Set up (once, then `make demo-reset` between runs)
@@ -22,7 +22,7 @@ All history is synthetic and says so on screen. Numbers below were measured on t
 
 **Act 1: Day 1, no memory (30 s).** Open the 129.00 USD dispute, Draft tab, **Memory OFF**: fight, 45%, generic checklist and letter, no explanation. "Every tool today works like this."
 
-**Act 2: Months later (30 s).** "Recoup has now seen 49 of this seller's disputes." Show **Insights** (money lost vs recovered, CourierX behind most recent losses, delivery proof wins "not received"). Then **Alerts**: press *Check deadlines now*. The 129.00 USD dispute is 2 days from its deadline, so a 72-hour warning appears, labelled **Simulated email** (no mail server is configured, and it says so).
+**Act 2: Months later (30 s).** "Countercase has now seen 49 of this seller's disputes." Show **Insights** (money lost vs recovered, CourierX behind most recent losses, delivery proof wins "not received"). Then **Alerts**: press *Check deadlines now*. The 129.00 USD dispute is 2 days from its deadline, so a 72-hour warning appears, labelled **Simulated email** (no mail server is configured, and it says so).
 
 **Act 3: Same dispute, Memory ON (2 min).** Same model, same prompt, same dispute; only recall changes.
 - Advice: fight, **62%** from 3 similar cases (OFF: 45%, 0 cases).
@@ -34,7 +34,7 @@ All history is synthetic and says so on screen. Numbers below were measured on t
 - Draft tab: every claim shows the source record's own text. Add an unsourced claim: Approve is blocked.
 - Approve: the dialog says plainly whether anything is sent (Stripe test mode) or a PDF is exported.
 
-**Act 3b: The honest accept (45 s).** Open the 84.00 USD dispute (parcel returned, no delivery proof). Advice: **accept**, no rebuttal drafted, because the customer's claim looks valid. "Other tools fight everything. Recoup tells you when not to."
+**Act 3b: The honest accept (45 s).** Open the 84.00 USD dispute (parcel returned, no delivery proof). Advice: **accept**, no rebuttal drafted, because the customer's claim looks valid. "Other tools fight everything. Countercase tells you when not to."
 
 **Act 4: The agent learns (1 min).** On the 129.00 USD dispute, after approving, use the **Demo tool** panel to simulate a win. The page shows "What the agent just learned" (belief confidence moves). Open **Playbook**: best evidence per type, risky couriers, repeat disputers, the seller's rules. Edit a draft shorter and approve: "Keep letters short" is *proposed*, saved only when the seller clicks.
 
@@ -53,16 +53,18 @@ Say plainly: this is a simulation, the money gain is small because fighting is u
 ## Honest limits (say them before they ask)
 
 - Everything is synthetic. Nothing has run against real Stripe: the submit step has only run against a fake client (needs the Stripe CLI and a test key, see `docs/STATUS.md`).
+- The app has no login or access controls. The Render blueprint is untested and has no live PayPal credentials configured; never put real seller, PayPal, or processor credentials/data on a publicly accessible instance until authentication and access controls are implemented.
+- `DEMO_TOOLS=1` is for local demos only. Keep it disabled in any deployed environment.
 - Deadline alerts are simulated unless SMTP is configured.
 - Hindsight on the Groq free tier loads about one full history per day; use a paid tier or load the day before.
-- Single demo seller, no login.
+- Single demo seller.
 
 ## Likely questions
 
 - *Isn't this rigged?* Same model, prompt and dispute; only the recall step differs. The Inspector lists exactly what was injected. The eval holds out cases memory never saw, and no outcome in memory is dated after the demo disputes open.
 - *What if a seller's note is wrong?* Notes and uploads are stored unverified and can never back a claim (a database rule enforces it). Beliefs are counted from outcomes, not written by a model.
 - *Does it submit by itself?* Never. The seller approves a hash of exactly what is sent; Stripe test keys only.
-- *Stripe Smart Disputes?* Black box, Stripe-only. Recoup: every decision cited, per-seller memory, honest accept advice.
+- *Stripe Smart Disputes?* Black box, Stripe-only. Countercase: every decision cited, per-seller memory, honest accept advice.
 - *Privacy?* Customers appear only as per-seller hashes; no card data; the seller can reject or delete any memory.
 
 ## Recording tips (rehearsed 14/14 + the approve and learn flow in a real browser)

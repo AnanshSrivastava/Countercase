@@ -34,7 +34,7 @@ demo-reset:
 	docker compose exec api python -m app.core.demo_reset --yes
 
 seed-core:
-	cd apps/api && DATABASE_URL=postgresql://recoup:recoup@localhost:$(DB_PORT)/recoup python -m app.agent.seed_core
+	cd apps/api && DATABASE_URL=postgresql://countercase:countercase@localhost:$(DB_PORT)/countercase python -m app.agent.seed_core
 
 seed:
 	cd apps/api && python -m app.agent.seed_loader --backend hindsight --reset --pace 25 --url http://localhost:8888
@@ -42,7 +42,7 @@ seed:
 # Core tests need Postgres (`make up` first). Uses DB_PORT if set, else 5432.
 DB_PORT ?= 5432
 test:
-	cd apps/api && TEST_DATABASE_URL=postgresql://recoup:recoup@localhost:$(DB_PORT)/recoup_test uv run pytest -q
+	cd apps/api && TEST_DATABASE_URL=postgresql://countercase:countercase@localhost:$(DB_PORT)/countercase_test uv run pytest -q
 	cd apps/web && pnpm lint
 
 lint:

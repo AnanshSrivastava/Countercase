@@ -1,4 +1,4 @@
-# Recoup — Product Requirements (source of truth, v1 as pasted 2026-11-07)
+# Countercase — Product Requirements (source of truth, v1 as pasted 2026-11-07)
 
 > Changes we propose are in [IMPROVEMENTS.md](IMPROVEMENTS.md); accepted ones are logged in [DECISIONS.md](DECISIONS.md). Edit this file only when a decision is accepted.
 
@@ -23,7 +23,7 @@ When a customer files a dispute ("item not received", "unauthorized purchase"), 
 
 ## 3. Positioning
 
-| | Enterprise tools (Justt, Chargeflow, Chargebacks911) | Stripe Smart Disputes | *Recoup* |
+| | Enterprise tools (Justt, Chargeflow, Chargebacks911) | Stripe Smart Disputes | *Countercase* |
 |---|---|---|---|
 | Built for | Large merchants | Stripe users only | Small sellers, any processor |
 | Reasoning | Black box | Black box | *Every decision explained with sources* |

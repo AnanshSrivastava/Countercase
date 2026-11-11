@@ -1,6 +1,6 @@
 """Seed data for the mock shop: a stand-in for a merchant's own store and courier systems.
 
-This is the *source system*. Raw customer emails live here, not in Recoup's database:
+This is the *source system*. Raw customer emails live here, not in Countercase's database:
 core only ever stores per-seller HMAC hashes. SKUs and couriers match
 data/seed/history.json so a fresh demo dispute lines up with the seeded memory.
 IPs are RFC 5737 documentation addresses.

@@ -10,7 +10,7 @@ _DEFAULT_FIXTURES = _HERE.parents[3] / "fixtures" if len(_HERE.parents) > 3 else
 class Settings(BaseSettings):
     model_config = SettingsConfigDict(env_file=".env", extra="ignore")
 
-    database_url: str = "postgresql://recoup:recoup@localhost:5432/recoup"
+    database_url: str = "postgresql://countercase:countercase@localhost:5432/countercase"
     hindsight_url: str = "http://localhost:8888"
     web_origin: str = "http://localhost:3000"
     fixtures_dir: Path = _DEFAULT_FIXTURES
@@ -46,7 +46,7 @@ class Settings(BaseSettings):
     # ALERTS_INTERVAL_SECONDS > 0 starts a background check; 0 = only POST /core/alerts/run checks.
     alerts_interval_seconds: int = 0
     alert_email_to: str = ""
-    alert_email_from: str = "recoup@localhost"
+    alert_email_from: str = "countercase@localhost"
     smtp_host: str = ""
     smtp_port: int = 587
     smtp_user: str = ""

@@ -71,11 +71,11 @@ def default_notifier() -> Notifier:
 
 def _message(d: DisputeRow, threshold: int, hours_left: float) -> tuple[str, str]:
     money = f"{d.amount / 100:.2f} {d.currency.upper()}"
-    subject = f"[Recoup] {threshold}h left to respond: {money} dispute {d.id}"
+    subject = f"[Countercase] {threshold}h left to respond: {money} dispute {d.id}"
     body = (
         f"A {money} dispute ({(d.category or 'other').replace('_', ' ')}) is due {d.deadline_at:%Y-%m-%d %H:%M} UTC "
         f"(about {hours_left:.0f}h from now). Status: {d.status.replace('_', ' ')}.\n"
-        f"Open it in Recoup to review the draft and approve it before the deadline."
+        f"Open it in Countercase to review the draft and approve it before the deadline."
     )
     return subject, body
 

@@ -6,7 +6,7 @@ import type { Alert } from "@/lib/alerts-data";
 
 import { checkDeadlinesNow } from "./actions";
 
-export const metadata = { title: "Deadline alerts · Recoup" };
+export const metadata = { title: "Deadline alerts · Countercase" };
 
 const card = "rounded-lg border border-zinc-200 bg-white p-4 dark:border-zinc-800 dark:bg-zinc-900";
 
@@ -16,7 +16,7 @@ export default function AlertsPage() {
       <header>
         <h1 className="text-2xl font-semibold">Deadline alerts</h1>
         <p className="mt-1 text-sm text-zinc-600 dark:text-zinc-400">
-          Recoup warns you 72, 24 and 6 hours before a response is due, only for disputes still waiting on you. Each
+          Countercase warns you 72, 24 and 6 hours before a response is due, only for disputes still waiting on you. Each
           warning is sent once.
         </p>
       </header>

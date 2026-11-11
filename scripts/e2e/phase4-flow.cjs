@@ -120,7 +120,7 @@ async function webhook(order, amount, reason) {
   check("approved letter contains the seller's edit", sub.letter_md.includes("edited by the seller"));
 
   // learning suggestions are optional; just record what appeared
-  const learned = await page.getByRole("heading", { name: "Should Recoup remember this?" }).count();
+  const learned = await page.getByRole("heading", { name: "Should Countercase remember this?" }).count();
   console.log("   (learned-rule suggestions shown:", learned > 0 ? "yes" : "no", ")");
 
   // reload: the saved submission record is shown
