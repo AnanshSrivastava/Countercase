@@ -33,7 +33,7 @@ from app.core.models import (
     Submission,
 )
 from app.core.paypal import ingest as paypal_ingest
-from app.core.paypal.client import PayPalClient
+from app.core.paypal.client import PayPalClient, PayPalError
 from app.core.paypal.collector import PayPalCollector
 from app.core.processors import MultiSubmitter, ProcessorSubmitter
 from app.core.tables import DisputeRow, EvidenceRow
@@ -41,6 +41,7 @@ from app.settings import settings
 
 MAX_NOTE_CHARS = 2000
 SUBMISSION_ID = re.compile(r"^sub_[0-9a-f]{12}$")
+PAYPAL_ORDER_ID = re.compile(r"^[A-Z0-9]{1,36}$")
 
 router = APIRouter()
 router.include_router(insights_router)
@@ -60,6 +61,17 @@ def get_submitter() -> ProcessorSubmitter:
 
 def get_paypal_client() -> PayPalClient:
     return PayPalClient()
+
+
+def _require_paypal_sandbox(client: PayPalClient) -> None:
+    available, reason = client.available()
+    if not available:
+        raise ApiError(503, "paypal_unavailable", reason)
+
+
+def _paypal_checkout_error(exc: PayPalError) -> ApiError:
+    status = exc.status if exc.status and 400 <= exc.status <= 599 else 502
+    return ApiError(status, "paypal_checkout_failed", exc.message)
 
 
 def get_paypal_dispute_lookup() -> paypal_ingest.DisputeLookup:
@@ -125,6 +137,33 @@ async def paypal_webhook(
     if event.get("event_type") == "CUSTOMER.DISPUTE.RESOLVED" and outcome in ("created", "updated"):
         background.add_task(outcome_report.report_closed, event["resource"]["dispute_id"])
     return {"received": event["id"], "outcome": outcome}
+
+
+@router.post("/paypal/checkout/orders")
+async def create_paypal_checkout_order(
+    client: PayPalClient = Depends(get_paypal_client),
+) -> dict:
+    """Create a fixed USD $10 Sandbox purchase; amount is never accepted from the browser."""
+    _require_paypal_sandbox(client)
+    try:
+        return await run_in_threadpool(client.create_checkout_order)
+    except PayPalError as exc:
+        raise _paypal_checkout_error(exc) from exc
+
+
+@router.post("/paypal/checkout/orders/{order_id}/capture")
+async def capture_paypal_checkout_order(
+    order_id: str,
+    client: PayPalClient = Depends(get_paypal_client),
+) -> dict:
+    """Capture a PayPal-approved Sandbox order."""
+    if not PAYPAL_ORDER_ID.fullmatch(order_id):
+        raise ApiError(422, "invalid_order_id", "PayPal order ID has an invalid format")
+    _require_paypal_sandbox(client)
+    try:
+        return await run_in_threadpool(client.capture_checkout_order, order_id)
+    except PayPalError as exc:
+        raise _paypal_checkout_error(exc) from exc
 
 
 @router.get("/disputes", response_model=list[Dispute])

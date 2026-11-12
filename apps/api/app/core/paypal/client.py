@@ -134,6 +134,31 @@ class PayPalClient:
             headers={"PayPal-Request-Id": request_id},
         )
 
+    # -- sandbox checkout ------------------------------------------------------------------
+    def create_checkout_order(self) -> dict:
+        """Create a fixed-value sandbox purchase used to exercise dispute workflows."""
+        return self._request(
+            "POST",
+            "/v2/checkout/orders",
+            json={
+                "intent": "CAPTURE",
+                "purchase_units": [
+                    {
+                        "description": "Countercase Sandbox test purchase",
+                        "amount": {"currency_code": "USD", "value": "10.00"},
+                    }
+                ],
+            },
+        )
+
+    def capture_checkout_order(self, order_id: str) -> dict:
+        """Capture a buyer-approved sandbox order."""
+        return self._request(
+            "POST",
+            f"/v2/checkout/orders/{order_id}/capture",
+            json={},
+        )
+
     # -- transactions -----------------------------------------------------------------------
     def get_transaction(self, transaction_id: str, around: datetime) -> dict | None:
         """Transaction Search needs a date window (max 31 days). Returns the one match or None."""

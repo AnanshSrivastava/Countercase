@@ -57,6 +57,31 @@ Stripe still works: `MultiSubmitter` picks the submitter by `dispute.processor`.
 
 ## Verify against the live sandbox first (not testable offline)
 
+### Local Sandbox checkout
+
+Countercase includes a local-only checkout at `/sandbox-checkout` to create a test sale before
+opening a dispute. The API creates a fixed `$10.00 USD` Orders v2 purchase and captures it only
+after the Sandbox buyer approves. The amount is not accepted from browser input, and the PayPal
+Client Secret remains on the API server. The UI requires the business account associated with the
+Sandbox REST app and a Personal Sandbox buyer account.
+
+PayPal may reject domestic INR transactions for some account regions. The checkout uses USD, but
+currency alone does not change whether PayPal classifies a payment as domestic or international;
+use a supported cross-border pair of Sandbox accounts for a goods/services payment. See PayPal's
+[Sandbox account guide](https://developer.paypal.com/sandbox-testing/accounts) and
+[checkout integration guide](https://developer.paypal.com/studio/checkout/standard/integrate).
+
+This test page does not create Countercase shop orders or attach evidence to a dispute. It only
+creates the Sandbox payment needed to exercise PayPal's dispute flow. It must not be exposed with
+real customer or PayPal data while the app has no authentication.
+
+The PayPal Sandbox JS SDK is loaded in the browser using the public Client ID. The API uses the
+existing `PAYPAL_CLIENT_ID`, `PAYPAL_CLIENT_SECRET`, and sandbox base URL from `.env` for the
+server-side create and capture calls. Restart both services after changing credentials:
+`docker compose restart api web`.
+
+### Unverified assumptions
+
 The test suite stubs PayPal, so these are the assumptions to confirm with a real sandbox dispute:
 
 - `provide-evidence` multipart: document parts keyed by file name and listed in `documents[].name`.
